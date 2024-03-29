@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sign up</title>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background: mediumturquoise;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.login-box{
+    position: relative;
+    width: 380px;
+    height: 450px;
+    background: rgb(0, 0, 0,0.83);
+    color: #fff;
+    padding: 80px 30px 25px 30px;
+    border-radius: 20px;
+}
+.signup-box{
+    position: relative;
+    width: 430px;
+    height: 590px;
+    background-color: hsla(120,100%,75%,0.3);
+    color: #fff;
+    padding: 80px 30px 25px 30px;
+    border-radius: 20px;
+}
+.header-img{
+    position: absolute;
+    top: -50px;
+    left: 37%;
+}
+.header-img img{
+    width: 100px;
+    border-radius: 50px;
+}
+.header-text{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.input-group{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.input-field{
+    height: 40px;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    margin: 15px 0;
+    padding: 0 15px;
+    outline: none;
+}
+.input-field:focus,.input-field:valid{
+    border-bottom: 2px solid #d1e710;
+}
+.input-group label{
+    position: absolute;
+    top: 23px;
+    left: 3px;
+    transition: .3s;
+}
+.input-field:focus ~ label,.input-field:valid ~ label{
+    top: 5px;
+    font-size: 12px;
+    color: #d1e710;
+}
+.forgot-pass{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.forgot-pass a{
+    color: #e9f76a;
+    font-size: 12px;
+}
+.input-submit{
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background: #d1e710;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: .4s ease-out;
+}
+.input-submit:hover{
+    box-shadow: 0 1px 10px rgb(254, 201, 26,0.5);
+}
+.input-redirect{
+    color:white;
+    text-decoration: none;
+}
+span{
+    text-align: center;
+}
+.input-redirect:hover{
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+    <form method="post" action="fun.html">
+        {% csrf_token %}
+     <div class="container">
+        <div class="signup-box">
+            <div class="header-text">
+                <p>Signup</p>
+            </div>
+            <div class="input-group">
+                <input type="text" class="input-field" id="username" name="r1" required>
+                <label for="username">Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" class="input-field" id="contact" name="r2" required>
+                <label for="contact">Contact</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" class="input-field" id="email" name="r3" required>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" class="input-field" id="password" name="r4" required>
+                <label for="password">Password</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" class="input-field" id="password1" name="r5" required>
+                <label for="password1">Confirm Password</label>
+            </div>
+
+            <div class="forgot-pass">
+                <a href="#">Forgot password?</a>
+            </div>
+            <div>
+                <input type="submit" value="submit">
+            </div>
+            
+            
+
+        </div>
+     </div>
+    </form>
+     <script>
+        function myfun() {
+          var n=document.getElementById('password').value;
+          var p=document.getElementById('password1').value;
+          if (n!==p) {
+            window.alert("Confirm Password is not matching");
+            return;
+          }
+          else {
+            window.alert("You are successfully registered");
+            return;
+          }
+        }
+      </script>
+</body>
+</html>
