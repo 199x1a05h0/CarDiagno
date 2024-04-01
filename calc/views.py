@@ -6,7 +6,7 @@ import pprint
 li=[]
 # Create your views here.
 def home(request):
-    return render(request,"fun.html")
+    return render(request,"index.html")
 def fun0(request):
     n=request.POST['r1']
     s=request.POST['r2']
